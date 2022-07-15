@@ -17,11 +17,15 @@ class App extends Component {
       });
   }
 
+  onChangeHandler = (event) =>{
+    console.log(event.target.value);
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Cattydex</h1>
-        <input type="search" />
+        <input type="search" onChange={this.onChangeHandler} />
         <div>
           {this.state.catList.map((cat) => {
             return <h1 key={cat.id}>{cat.name}</h1>;
