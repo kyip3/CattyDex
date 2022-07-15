@@ -6,7 +6,12 @@ class List extends Component{
         return (
           <div>
             {this.props.filteredList.map((cat) => {
-              return <h1 key={cat.id}>{cat.name}</h1>;
+              return (
+                <div>
+                  <h1 key={cat.id}>{cat.name}</h1>
+                  <img src={`https://robohash.org/${cat.id}?set=set4`} />
+                </div>
+              );
             })}
           </div>
         );

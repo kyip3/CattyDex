@@ -1,6 +1,11 @@
 # React Basic - Class component
 
-This project is for practicing and revising what is class component.
+This project is called Cattydex.
+
+You can do a search to filter catty listing.
+
+Is build using class component.
+
 
 Reading Reference: 
 
@@ -10,7 +15,7 @@ Tools:
 
 https://fonts.google.com/specimen/Bigelow+Rules
 
-https://robohash.org/
+https://robohash.org/123?set=set4
 
 https://jsonplaceholder.typicode.com/users
 
