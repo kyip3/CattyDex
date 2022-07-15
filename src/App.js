@@ -2,26 +2,29 @@ import { Component } from "react";
 import "./App.css";
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.catList = [
-      { id: 1, name: "Tim" },
-      { id: 2, name: "Jack" },
-      { id: 3, name: "Jane" },
-    ];
+    this.state = {
+      catList: [],
+    };
   }
 
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({ catList: result });
+      });
+  }
 
   render() {
     return (
       <div className="App">
         <h1>Cattydex</h1>
-        <input />
+        <input type="search" />
         <div>
-          {this.catList.map((cat)=>{
-            return (
-              <h1>{cat.name}</h1>
-            );
+          {this.state.catList.map((cat) => {
+            return <h1 key={cat.id}>{cat.name}</h1>;
           })}
         </div>
       </div>
