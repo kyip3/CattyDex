@@ -1,11 +1,14 @@
 import { Component } from "react";
 import "./App.css";
+import List from "./component/Listing/List";
+import Input from "./component/UI/Input";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       catList: [],
+      filterText: "",
     };
   }
 
@@ -17,20 +20,26 @@ class App extends Component {
       });
   }
 
-  onChangeHandler = (event) =>{
-    console.log(event.target.value);
-  }
+  onSearchChange = (event) => {
+    const value = event.target.value;
+    this.setState(() => {
+      return { filterText: value };
+    });
+  };
 
   render() {
+    //filter list based in input
+    const filteredCatList = this.state.catList.filter((cat) => {
+      return cat.name
+        .toLocaleLowerCase()
+        .includes(this.state.filterText.toLocaleLowerCase());
+    });
+
     return (
       <div className="App">
         <h1>Cattydex</h1>
-        <input type="search" onChange={this.onChangeHandler} />
-        <div>
-          {this.state.catList.map((cat) => {
-            return <h1 key={cat.id}>{cat.name}</h1>;
-          })}
-        </div>
+        <Input onChangeHandler={this.onSearchChange} />
+        <List filteredList={filteredCatList} />
       </div>
     );
   }

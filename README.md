@@ -18,7 +18,7 @@ https://jsonplaceholder.typicode.com/users
 ---
 
 
-## Class component example
+## Class component examples
 
 ``` js
 class Welcome extends React.Component {
@@ -48,6 +48,7 @@ React will call this method to render the UI on screen.
 
 In class, use `this.props` to access the props passed from the parent.
 
+---
 ## `component state`
 ```
 this.setState({name:'Tim'},console.log("this.state"))
@@ -60,8 +61,9 @@ this.setState({name:'Tim'},console.log("this.state"))
 setState is a asynchronus call. It will only execute it later.
 
 
-
+If you want to get the updated value immediately, you can pass it as a function or a callback.
 ``` js
+//Secondary callback
 //param state refer to the current state.
 this.state((state,props)=>{
     return {
@@ -73,5 +75,42 @@ this.state((state,props)=>{
     console.log(this.state);
 })
 ```
-If you want to get the updated value immediately, you can pass it as a function or a callback.
 
+``` js
+//pass as a function to setState
+// this.state = {
+//   catList: [],
+//   filterText: ""
+// };
+  onChangeHandler1 = (event) =>{
+    const value = event.target.value;
+    this.setState(()=>{
+      return {filterText:value};
+    });
+  }
+
+    onChangeHandler2 = (event) =>{
+    const filterText = event.target.value;
+    this.setState(()=>{
+      return {filterText}; //this will find filterText object and replaced with filterText value
+    });
+  }
+
+```
+---
+## Other examples
+
+## `toLocaleLowerCase() and toLowerCase()`
+Both work the same, except that toLocaleLowerCase will cater lower case for different languages. e.g turkish.
+
+>The toLocaleLowerCase() method returns the value of the string converted to lower case according to any locale-specific case mappings. toLocaleLowerCase() does not affect the value of the string itself. In most cases, this will produce the same result as toLowerCase(), but for some locales, such as Turkish, whose case mappings do not follow the default case mappings in Unicode, there may be a different result.
+
+## `map.filter()`
+`map.filter()` will only accept boolean return. 
+
+To filter based on condition return (true/false) 
+``` js
+const filteredMonsters = monsters.filter((monster) => {
+    return monster.name.toLowerCase().includes(searchField);
+});
+```
