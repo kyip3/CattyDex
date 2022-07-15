@@ -1,0 +1,15 @@
+body {
+  background-image: linear-gradient(to bottom right, #f0f0f0, #f0d8a8);
+}
+
+
+.app {
+  text-align: center;
+}
+
+.title {
+  margin: 2rem;
+  font-size: 90px;
+  color: #484848;
+  font-family: 'Dancing Script';
+}

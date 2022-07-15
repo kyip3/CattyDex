@@ -1,7 +1,7 @@
 import { Component } from "react";
-import "./App.css";
 import List from "./component/Listing/List";
 import Input from "./component/UI/Input";
+import classes from "./App.module.css";
 
 class App extends Component {
   constructor() {
@@ -36,8 +36,8 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
-        <h1>Cattydex</h1>
+      <div className={classes.app}>
+        <h1 className={classes.title}>Cattydex</h1>
         <Input onChangeHandler={this.onSearchChange} />
         <List filteredList={filteredCatList} />
       </div>

@@ -1,13 +1,14 @@
 import { Component } from "react";
+import classes from "./List.module.css";
 
 class List extends Component{
 
     render(){
         return (
-          <div>
+          <div className={classes.listing}>
             {this.props.filteredList.map((cat) => {
               return (
-                <div>
+                <div className={classes.list}>
                   <h1 key={cat.id}>{cat.name}</h1>
                   <img src={`https://robohash.org/${cat.id}?set=set4`} />
                 </div>
