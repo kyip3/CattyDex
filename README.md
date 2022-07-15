@@ -12,7 +12,10 @@ https://fonts.google.com/specimen/Bigelow+Rules
 
 https://robohash.org/
 
+https://jsonplaceholder.typicode.com/users
 
+
+---
 
 
 ## Class component example
