@@ -1,5 +1,4 @@
 import { Component } from "react";
-import classes from "./Input.module.css";
 
 class Input extends Component{
 

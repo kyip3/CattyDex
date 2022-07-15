@@ -10,7 +10,7 @@ class List extends Component{
               return (
                 <div className={classes.list}>
                   <h1 key={cat.id}>{cat.name}</h1>
-                  <img src={`https://robohash.org/${cat.id}?set=set4`} />
+                  <img alt={`cat-${cat.name}`} src={`https://robohash.org/${cat.id}?set=set4`} />
                 </div>
               );
             })}
