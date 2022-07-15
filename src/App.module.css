@@ -1,5 +1,9 @@
 body {
-  background-image: linear-gradient(to bottom right, #f0f0f0, #f0d8a8);
+  background: linear-gradient(to left,
+      #f0f0f0 0%,
+      #f0d8a8 100%);
+  margin: 0;
+  padding: 0;
 }
 
 
